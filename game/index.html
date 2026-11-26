@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stratos Courier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Menu Screen Overlay -->
+    <div id="menu-screen" class="ui-screen">
+      <div class="panel">
+        <h1 class="game-title">STRATOS COURIER</h1>
+        <div class="game-subtitle">ORIGINAL FLIGHT GAME</div>
+        
+        <div class="mission-list" id="mission-list">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+        <div class="controls-info">
+          <strong>CONTROLS:</strong><br>
+          Pitch: <kbd>Up</kbd> / <kbd>Down</kbd> | Roll / Turn: <kbd>Left</kbd> / <kbd>Right</kbd><br>
+          Throttle: <kbd>W</kbd> (Up) / <kbd>S</kbd> (Down) | Toggle Cockpit: <kbd>V</kbd><br>
+          Restart: <kbd>R</kbd> | Mute Sound: <kbd>M</kbd> | Select Mission: <kbd>1</kbd>-<kbd>5</kbd>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission End Screen Overlay -->
+    <div id="end-screen" class="ui-screen hidden">
+      <div class="panel">
+        <h1 id="end-title" class="game-title">MISSION ACCOMPLISHED</h1>
+        <div id="end-message" class="game-subtitle">Great flying, courier!</div>
+        
+        <div id="end-stats" class="end-stats">
+          Score: <span id="stat-score">0</span><br>
+          Time Left: <span id="stat-time">0</span>s<br>
+          Fuel Remaining: <span id="stat-fuel">0</span>%
+        </div>
+
+        <button id="restart-btn" class="btn-primary">RETRY MISSION (<kbd>R</kbd>)</button>
+        <button id="menu-btn" class="btn-primary" style="margin-left: 10px; background: #203040; color: #00ffcc;">MAIN MENU</button>
+      </div>
+    </div>
+
+    <div class="footer-credit">Stratos Courier — original game, no assets.</div>
+  </div>
+
+  <!-- Module scripts loaded in dependency order -->
+  <script type="module" src="js/math3d.js"></script>
+  <script type="module" src="js/input.js"></script>
+  <script type="module" src="js/audio.js"></script>
+  <script type="module" src="js/terrain.js"></script>
+  <script type="module" src="js/aircraft.js"></script>
+  <script type="module" src="js/hud.js"></script>
+  <script type="module" src="js/missions.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
